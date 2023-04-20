@@ -49,11 +49,52 @@ fill body json with the field you want to update
 }
 
 - appointment creation
+
+POST
+/api/appointment - create a new appointment
+
+fill body json with the fields ( there are 2 types of appointments: "CLEANING" or "CHECKUP")
+{
+    
+    "patient": {
+        "id": 3,
+        "name": "XXXXX",
+        "phone": 666666666,
+        "insurance": "XXXXX"
+    },
+    "dentist": {
+        "id": 2,
+        "name": "XXXXXX",
+        "phone": 222222222
+    },
+    "date": "2023-04-20T08:23:14.000+00:00",
+    "type": "CHECKUP" 
+}
+
 - appointment modification
+
+PUT
+/api/appointment/{id} - change an appointment
+
+
 - cancellation of appointments
-- See all appointments I have as a client (only my own)
+
+DELETE
+
+/appointment/{id} - delete appointment by appointment_id
+
+- See all appointments I have as a patient (only my own)
+
+GET
+/api/appointment/patient/{id} - List all appointments from patient by patient_id
+
 - View all existing appointments (as a dentist)
--
+
+GET
+/api/appointment - List all appointments
+/api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
+
+
 - View all patients
 
 GET
@@ -63,12 +104,21 @@ GET
 ADDITIONAL FEATURES
 
 - View an appointment in detail
+
+GET
+/api/appointment/{id} - Show appointment details by appointment_id
+
+
 - Choosing a dentist at the appointment
 
 See all dentists:
 GET /api/dentist  - Can select dentist id
 
-- As a doctor, being able to see only my appointments
+- As a dentist, being able to see only my appointments
+
+GET
+/api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
+
 - Add types of intervention / consultation to appointments
 
 In this first phase of the project, the student has to carry out a complete REST API, with the Spring Framework, that meets the previously stated requirements.
