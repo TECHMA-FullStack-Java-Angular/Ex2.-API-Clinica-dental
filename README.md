@@ -1,66 +1,106 @@
 # Ex2.Dental Clinic - API
 Create the backend corresponding to the appointment management system for a Dental Clinic.
-
-Index
-- [User profile](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#User profile)
-
-@@BASIC FEATURES@@
 ---
 
-## User profile
+ In this first phase of the project, the student has to carry out a complete REST API, with the Spring Framework, that meets the previously stated requirements.
+
+It defines the necessary endpoints so that the backend can comply with what is established, feeding the different frontend views.
+
+ In addition to the aforementioned, the student must include the following functionality:
+
+- [x] mysql
+- [x] JPA
+- [x] Necessary relationships
+- [x] CRUD of the different models.
+- [x] Excellent Readme.
+
+---
+
+Index
+
+- [BASIC FEATURES](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#BASIC-FEATURES)
+  - [User profile](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#User-profile)
+  - [Profile Data Modification](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Profile-Data-Modification)
+  - [Appointment creation](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Appointment-creation)
+  - [Appointment modification](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Appointment-modification)
+  - [Appoiments cancellation](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#[Appoiments-cancellation)
+  - [View all appointments a patient have](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#View-all-appointments-a-patient-have)
+  - [View all existing appointments (as a dentist)](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#View-all-existing-appointments-(as-a-dentist))
+  - [View all patients](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#View-all-patients)
+- [ADDITIONAL FEATURES](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#ADDITIONAL-FEATURES)
+  - [View Appointment details](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#View-Appointment-details)
+  - [Select a dentist at the appointment](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Select-a-dentist-at-the-appointment)
+  - [View Appointments of dentist](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#View-Appointments-of-dentist)
+  - [Add types of intervention / consultation to appointments](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Add-types-of-intervention-/-consultation-to-appointments)
+
+---
+
+## BASIC FEATURES
+
+
+### User profile
 
 **POST**
-/api/dentist - create dentist profile
+
+`/api/dentist` - create dentist profile
 
 fill body json:
-       ` { 
+
+        { 
         "name": "XXXXXX",
         "phone": 88888888
-         }`
+         }
 
-/api/patient - create patient profile
+`/api/patient` - create patient profile
 
 fill body json:
-      `  { 
+
+       { 
         "name": "XXXXXX",
         "phone": 88888888,
         "insurance": "XXXX"
-         }`
+         }
     
  **DELETE**
  
- /api/dentist/{id} - delete dentist profile with id
- /api/patient/{id} - delete patient profile with id
+ `/api/dentist/{id}`- delete dentist profile with id
+ `/api/patient/{id}` - delete patient profile with id
 
 
-- [two]Modification of profile data
+### Profile Data Modification
 
 **PUT**
-/api/dentist/{id} - update dentist profile
 
-   ` {
+`/api/dentist/{id}` - update dentist profile
+
+
+    {
     "name": "XXXXXX",
     "phone": 66666666
-      }`
+      }
+      
 
-/api/patient/{id} - update patient profile
+`/api/patient/{id}` - update patient profile
 
 fill body json with the field you want to update
-   ` {
+    
+    {
     "name": "XXXX",
     "phone": 555555555,
     "insurance": "XXXX"
-    }`
+    }
+    
 
-- [three]appointment creation
+### Appointment creation
 
 **POST**
 
-/api/appointment - create a new appointment
+`/api/appointment` - create a new appointment
+
 
 fill body json with the fields ( there are 2 types of appointments: "CLEANING" or "CHECKUP")
 
-  `  {    
+    {    
     "patient": {
         "id": 3,
         "name": "XXXXX",
@@ -74,79 +114,86 @@ fill body json with the fields ( there are 2 types of appointments: "CLEANING" o
     },
     "date": "2023-04-20T08:23:14.000+00:00",
     "type": "CHECKUP" 
-   }`
+    }
+   
+   
 
-- appointment modification
+### Appointment modification
 
 **PUT**
 
-/api/appointment/{id} - change an appointment
+
+`/api/appointment/{id}` - change an appointment
 
 
-- [four]cancellation of appointments
+### Appoiments cancellation
 
 **DELETE**
 
-/appointment/{id} - delete appointment by appointment_id
+
+`/appointment/{id}` - delete appointment by appointment_id
 
 
-- [five]See all appointments I have as a patient (only my own)
+## View all appointments a patient have
+
 
 **GET**
-/api/appointment/patient/{id} - List all appointments from patient by patient_id
 
-- [six]View all existing appointments (as a dentist)
+
+`/api/appointment/patient/{id}` - List all appointments from patient by patient_id
+
+
+### View all existing appointments (as a dentist)
+
 
 **GET**
-/api/appointment - List all appointments
-
-/api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
 
 
-- [seven]View all patients
+`/api/appointment` - List all appointments
+
+`/api/appointment/dentist/{id}` - List all appointments for dentist by dentist_id
+
+
+### View all patients
+
 
 **GET**
-/api/patient - List all patients
 
 
-@@ADDITIONAL FEATURES@@
+`/api/patient` - List all patients
 
-- [eight]View an appointment in detail
+
+## ADDITIONAL FEATURES
+
+
+### View Appointment details
 
 **GET**
-/api/appointment/{id} - Show appointment details by appointment_id
 
 
-- [nine]Choosing a dentist at the appointment
+`/api/appointment/{id}` - Show appointment details by appointment_id
+
+
+### Select a dentist at the appointment
 
 See all dentists
 
 **GET**
 
-/api/dentist  - Can choose dentist
+`/api/dentist`  - Can choose dentist
 
 **POST**
 
-/api/appointment - Create an appointment and insert the choosed dentist
+`/api/appointment` - Create an appointment and insert the choosed dentist
 
-- As a dentist, being able to see only my appointments
+### View Appointments of dentist
 
 **GET**
 
-/api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
+`/api/appointment/dentist/{id}` - List all appointments for dentist by dentist_id
 
 
-- Add types of intervention / consultation to appointments
+### Add types of intervention / consultation to appointments
 
 
- In this first phase of the project, the student has to carry out a complete REST API, with the Spring Framework, that meets the previously stated requirements.
 
-It defines the necessary endpoints so that the backend can comply with what is established, feeding the different frontend views.
-
- In addition to the aforementioned, the student must include the following functionality:
-
-- [x] mysql
-- [x] JPA
-- [x] Necessary relationships
-- [x] CRUD of the different models.
-- [x] Excellent Readme.
