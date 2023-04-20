@@ -29,5 +29,5 @@ It defines the necessary endpoints so that the backend can comply with what is e
 - [x] mysql
 - [x] JPA
 - [x] Necessary relationships
-- [] CRUD of the different models.
-- [] Excellent Readme.
+- [x] CRUD of the different models.
+- [x] Excellent Readme.
