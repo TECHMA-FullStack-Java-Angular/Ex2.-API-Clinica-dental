@@ -112,7 +112,11 @@ GET
 - Choosing a dentist at the appointment
 
 See all dentists:
-GET /api/dentist  - Can select dentist id
+GET
+/api/dentist  - Can choose dentist
+
+POST 
+/api/appointment - Create an appointment and insert the choosed dentist
 
 - As a dentist, being able to see only my appointments
 
