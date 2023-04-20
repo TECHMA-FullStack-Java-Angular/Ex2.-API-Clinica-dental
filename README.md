@@ -1,65 +1,66 @@
-# @@Ex2.Dental Clinic - API@@
+# Ex2.Dental Clinic - API
 Create the backend corresponding to the appointment management system for a Dental Clinic.
 
-BASIC FEATURES
+Index
+- [User profile](https://github.com/PAULASOUSA2014/Ex2.-API-Clinica-dental#OUser profile)
 
-- User profile
+@@BASIC FEATURES@@
+---
 
-POST
+## User profile
+
+**POST**
 /api/dentist - create dentist profile
 
 fill body json:
-{ 
-
+       ` { 
         "name": "XXXXXX",
         "phone": 88888888
-    }
+         }`
 
 /api/patient - create patient profile
 
 fill body json:
-{ 
-
+      `  { 
         "name": "XXXXXX",
         "phone": 88888888,
         "insurance": "XXXX"
-    }
+         }`
     
- DELETE
+ **DELETE**
  
  /api/dentist/{id} - delete dentist profile with id
  /api/patient/{id} - delete patient profile with id
 
 
-- Modification of profile data
+- [two]Modification of profile data
 
-PUT
+**PUT**
 /api/dentist/{id} - update dentist profile
 
-{
-
+   ` {
     "name": "XXXXXX",
     "phone": 66666666
-}
+      }`
 
 /api/patient/{id} - update patient profile
 
 fill body json with the field you want to update
-{
-
+   ` {
     "name": "XXXX",
     "phone": 555555555,
     "insurance": "XXXX"
-}
+    }`
 
-- appointment creation
+- [three]appointment creation
 
-POST
+**POST**
+
 /api/appointment - create a new appointment
 
 fill body json with the fields ( there are 2 types of appointments: "CLEANING" or "CHECKUP")
-{
-    
+
+  `  {    
     "patient": {
         "id": 3,
         "name": "XXXXX",
@@ -73,60 +74,67 @@ fill body json with the fields ( there are 2 types of appointments: "CLEANING" o
     },
     "date": "2023-04-20T08:23:14.000+00:00",
     "type": "CHECKUP" 
-}
+   }`
 
 - appointment modification
 
-PUT
+**PUT**
+
 /api/appointment/{id} - change an appointment
 
 
-- cancellation of appointments
+- [four]cancellation of appointments
 
-DELETE
+**DELETE**
 
 /appointment/{id} - delete appointment by appointment_id
 
 
-- See all appointments I have as a patient (only my own)
+- [five]See all appointments I have as a patient (only my own)
 
-GET
+**GET**
 /api/appointment/patient/{id} - List all appointments from patient by patient_id
 
-- View all existing appointments (as a dentist)
+- [six]View all existing appointments (as a dentist)
 
-GET
+**GET**
 /api/appointment - List all appointments
+
 /api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
 
 
-- View all patients
+- [seven]View all patients
 
-GET
+**GET**
 /api/patient - List all patients
 
 
-ADDITIONAL FEATURES
+@@ADDITIONAL FEATURES@@
 
-- View an appointment in detail
+- [eight]View an appointment in detail
 
-GET
+**GET**
 /api/appointment/{id} - Show appointment details by appointment_id
 
 
-- Choosing a dentist at the appointment
+- [nine]Choosing a dentist at the appointment
 
 See all dentists
-GET
+
+**GET**
+
 /api/dentist  - Can choose dentist
 
-POST 
+**POST**
+
 /api/appointment - Create an appointment and insert the choosed dentist
 
 - As a dentist, being able to see only my appointments
 
-GET
+**GET**
+
 /api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
+
 
 - Add types of intervention / consultation to appointments
 
