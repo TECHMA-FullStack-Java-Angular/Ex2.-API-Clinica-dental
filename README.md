@@ -15,18 +15,19 @@ BASIC FEATURES
 
 ADDITIONAL FEATURES
 
-View a quote in detail
-Choosing a doctor at the appointment
-As a doctor, being able to see only my appointments
-Add types of intervention / consultation to appointments
+- View an appointment in detail
+- Choosing a doctor at the appointment
+- As a doctor, being able to see only my appointments
+- Add types of intervention / consultation to appointments
+
 In this first phase of the project, the student has to carry out a complete REST API, with the Spring Framework, that meets the previously stated requirements.
 
 It defines the necessary endpoints so that the backend can comply with what is established, feeding the different frontend views.
 
  In addition to the aforementioned, the student must include the following functionality:
 
-[] mysql
-[] JPA
-[] Necessary relationships
-[] CRUD of the different models.
-[] Excellent Readme.
+- [] mysql
+- [] JPA
+- [] Necessary relationships
+- [] CRUD of the different models.
+- [] Excellent Readme.
