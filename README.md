@@ -27,7 +27,7 @@ It defines the necessary endpoints so that the backend can comply with what is e
  In addition to the aforementioned, the student must include the following functionality:
 
 - [x] mysql
-- [] JPA
-- [] Necessary relationships
+- [x] JPA
+- [x] Necessary relationships
 - [] CRUD of the different models.
 - [] Excellent Readme.
