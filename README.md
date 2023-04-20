@@ -1,4 +1,5 @@
 # Ex2.Dental Clinic - API
+
 Create the backend corresponding to the appointment management system for a Dental Clinic.
 ---
 
@@ -32,6 +33,7 @@ Index
   - [Select a dentist at the appointment](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Select-a-dentist-at-the-appointment)
   - [View Appointments of dentist](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#View-Appointments-of-dentist)
   - [Add types of intervention / consultation to appointments](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#Add-types-of-intervention-/-consultation-to-appointments)
+ - [DATABASE loaded by MySQL](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#DATABASE-loaded-by-MySQL)
 
 ---
 
@@ -39,6 +41,7 @@ Index
 
 
 ### User profile
+
 
 **POST**
 
@@ -53,7 +56,7 @@ fill body json:
 
 `/api/patient` - create patient profile
 
-fill body json:
+fill body (raw) json:
 
        { 
         "name": "XXXXXX",
@@ -63,8 +66,8 @@ fill body json:
     
  **DELETE**
  
- `/api/dentist/{id}`- delete dentist profile with id
- `/api/patient/{id}` - delete patient profile with id
+ `/api/dentist/{id}`- delete dentist profile by id
+ `/api/patient/{id}` - delete patient profile by id
 
 
 ### Profile Data Modification
@@ -72,6 +75,8 @@ fill body json:
 **PUT**
 
 `/api/dentist/{id}` - update dentist profile
+
+fill body (raw) json with the field you want to update
 
 
     {
@@ -82,7 +87,7 @@ fill body json:
 
 `/api/patient/{id}` - update patient profile
 
-fill body json with the field you want to update
+fill body (raw) json with the field you want to update
     
     {
     "name": "XXXX",
@@ -98,7 +103,7 @@ fill body json with the field you want to update
 `/api/appointment` - create a new appointment
 
 
-fill body json with the fields ( there are 2 types of appointments: "CLEANING" or "CHECKUP")
+fill body (raw) json with the fields ( there are 2 types of appointments: "CLEANING" or "CHECKUP")
 
     {    
     "patient": {
@@ -124,6 +129,8 @@ fill body json with the fields ( there are 2 types of appointments: "CLEANING" o
 
 
 `/api/appointment/{id}` - change an appointment
+
+fill body (raw) json with the fields you want to update
 
 
 ### Appoiments cancellation
@@ -180,11 +187,11 @@ See all dentists
 
 **GET**
 
-`/api/dentist`  - Can choose dentist
+`/api/dentist`  - Can view dentist
 
 **POST**
 
-`/api/appointment` - Create an appointment and insert the choosed dentist
+`/api/appointment` - Create an appointment and insert choosed dentist
 
 ### View Appointments of dentist
 
@@ -194,6 +201,22 @@ See all dentists
 
 
 ### Add types of intervention / consultation to appointments
+
+
+## DATABASE loaded by MySQL
+
+- Patients
+
+<img width="185" alt="image" src="https://user-images.githubusercontent.com/110301198/233446360-620e64e8-07c2-47d9-8237-239c425d5331.png">
+
+- Dentists
+
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/110301198/233446571-3f92f6b1-c4e4-41d3-96f6-68b39d9bc96b.png">
+
+- Appointments
+
+<img width="316" alt="image" src="https://user-images.githubusercontent.com/110301198/233445081-9bbd5872-0c91-4610-866f-7a871db6debd.png">
+
 
 
 
