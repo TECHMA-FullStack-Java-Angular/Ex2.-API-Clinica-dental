@@ -1,9 +1,9 @@
-# <span style="color: green">Ex2.Dental Clinic - API
+# @@Ex2.Dental Clinic - API@@
 Create the backend corresponding to the appointment management system for a Dental Clinic.
 
 BASIC FEATURES
 
-- User profile</span>
+- User profile
 
 POST
 /api/dentist - create dentist profile
@@ -31,7 +31,7 @@ fill body json:
  /api/patient/{id} - delete patient profile with id
 
 
-- <span style="color: green">Modification of profile data</span>
+- Modification of profile data
 
 PUT
 /api/dentist/{id} - update dentist profile
@@ -51,8 +51,8 @@ fill body json with the field you want to update
     "phone": 555555555,
     "insurance": "XXXX"
 }
-<span style="color: green">
-- appointment creation</span>
+
+- appointment creation
 
 POST
 /api/appointment - create a new appointment
@@ -74,63 +74,63 @@ fill body json with the fields ( there are 2 types of appointments: "CLEANING" o
     "date": "2023-04-20T08:23:14.000+00:00",
     "type": "CHECKUP" 
 }
-<span style="color: green">
-- appointment modification</span>
+
+- appointment modification
 
 PUT
 /api/appointment/{id} - change an appointment
 
-<span style="color: green">
-- cancellation of appointments</span>
+
+- cancellation of appointments
 
 DELETE
 
 /appointment/{id} - delete appointment by appointment_id
 
-<span style="color: green">
-- See all appointments I have as a patient (only my own)</span>
+
+- See all appointments I have as a patient (only my own)
 
 GET
 /api/appointment/patient/{id} - List all appointments from patient by patient_id
-<span style="color: green">
-- View all existing appointments (as a dentist)</span>
+
+- View all existing appointments (as a dentist)
 
 GET
 /api/appointment - List all appointments
 /api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
 
-<span style="color: green">
-- View all patients</span>
+
+- View all patients
 
 GET
 /api/patient - List all patients
 
-<span style="color: green">
+
 ADDITIONAL FEATURES
 
-- View an appointment in detail</span>
+- View an appointment in detail
 
 GET
 /api/appointment/{id} - Show appointment details by appointment_id
 
-<span style="color: green">
+
 - Choosing a dentist at the appointment
 
-See all dentists:</span>
+See all dentists
 GET
 /api/dentist  - Can choose dentist
 
 POST 
 /api/appointment - Create an appointment and insert the choosed dentist
-<span style="color: green">
-- As a dentist, being able to see only my appointments</span>
+
+- As a dentist, being able to see only my appointments
 
 GET
 /api/appointment/dentist/{id} - List all appointments for dentist by dentist_id
-<span style="color: green">
-- Add types of intervention / consultation to appointments</span>
 
-<span style="color: green">
+- Add types of intervention / consultation to appointments
+
+
  In this first phase of the project, the student has to carry out a complete REST API, with the Spring Framework, that meets the previously stated requirements.
 
 It defines the necessary endpoints so that the backend can comply with what is established, feeding the different frontend views.
@@ -141,4 +141,4 @@ It defines the necessary endpoints so that the backend can comply with what is e
 - [x] JPA
 - [x] Necessary relationships
 - [x] CRUD of the different models.
-- [x] Excellent Readme.</span>
+- [x] Excellent Readme.
