@@ -2,7 +2,7 @@
 Create the backend corresponding to the appointment management system for a Dental Clinic.
 
 Index
-- [User profile](https://github.com/PAULASOUSA2014/Ex2.-API-Clinica-dental#OUser profile)
+- [User profile](https://github.com/PaulaSousa2014/Ex2.-API-Clinica-dental#User profile)
 
 @@BASIC FEATURES@@
 ---
