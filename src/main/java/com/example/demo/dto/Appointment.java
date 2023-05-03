@@ -4,12 +4,16 @@ import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 @Table(name="appointments")
@@ -25,8 +29,10 @@ public class Appointment {
 	@JoinColumn(name="dentist")//an appointments can be made for 1 dentist
 	private Dentist dentist;
 	@Column(name="appointment_date")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	@Column(name="appointment_type")
+	@Enumerated(EnumType.STRING)
 	private Type type;
 	
 	//Constructors
@@ -77,6 +83,7 @@ public class Appointment {
 	//print line for appointments
 	@Override
 	public String toString() {
+		
 		return "Appointment [id=" + id + ", patient=" + patient + ", dentist=" + dentist + ", date=" + date + ", type="
 				+ type + "]";
 	}

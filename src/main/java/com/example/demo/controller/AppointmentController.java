@@ -38,6 +38,12 @@ public class AppointmentController {
 	public List<Appointment> showAppointmentsByPatientId(@PathVariable(name = "id") int id) {
 		return appointmentService.showAppointmentsByPatientId(id);
 	}
+	
+	
+	@GetMapping("/appointment/{id}") //show appointment by id
+	public Appointment findAppointment(@PathVariable(name = "id") int id) {
+		return  appointmentService.findAppointment(id);
+		}
 
 	@PostMapping("/appointment") //create new apppointment on api
 	public Appointment createAppointment(@RequestBody Appointment appointment) {
@@ -66,9 +72,7 @@ public class AppointmentController {
 		}else if (appointment.getDate() != null) {
 			appointmentSelected.setDate(appointment.getDate());
 			appointmentUpdated = appointmentService.updateAppointment(appointmentSelected);
-		}
-
-		else {
+		}else {
 			appointmentUpdated = appointmentSelected;
 		}
 

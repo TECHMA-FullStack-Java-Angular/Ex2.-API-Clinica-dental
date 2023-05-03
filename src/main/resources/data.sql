@@ -16,12 +16,19 @@ CREATE TABLE IF NOT EXISTS dentists(
     CONSTRAINT PK_patients PRIMARY KEY (id)
 	);
     
+ /**   CREATE TABLE IF NOT EXISTS appointment_types(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+	type_name VARCHAR(50) NOT NULL UNIQUE,
+    CONSTRAINT PK_appointment_types PRIMARY KEY (id)
+    );
+    **/
+    
 	CREATE TABLE IF NOT EXISTS appointments (
     id int auto_increment,
     patient int,
     dentist int,
     appointment_date datetime,
-    appointment_type ENUM('CHECKUP','CLEANING'),
+    appointment_type /**varchar(50),**/ enum('CLEANING','CHECKUP'),
     CONSTRAINT PK_appointments PRIMARY KEY (id),
     CONSTRAINT FK_appointments_patients FOREIGN KEY (patient) REFERENCES patients(id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT FK_appointments_users FOREIGN KEY (dentist) REFERENCES dentists(id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -33,6 +40,8 @@ insert into dentists (id, user_name, phone)values(3,'Dentist 2',333333333);
 insert into patients (id, user_name, phone, insurance)values(1,'Patient 1',444444444, 'adeslas');
 insert into patients (id, user_name, phone, insurance)values(2,'Patient 2',555555555, 'dkv');
 insert into patients (id, user_name, phone, insurance)values(3,'Patient 3',666666666, 'mapfre');
+/**insert into appointment_types(id, type_name) values(1,'CLEANING');
+insert into appointment_types(id, type_name) values(2,'CHECKUP');**/
 insert into appointments (id, patient, dentist, appointment_date, appointment_type)values(1,3,2,NOW(),'CHECKUP');
 insert into appointments (id, patient, dentist, appointment_date, appointment_type)values(2,2,1,NOW(),'CLEANING');
 insert into appointments (id, patient, dentist, appointment_date, appointment_type)values(3,1,3,NOW(),'CHECKUP');
